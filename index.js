@@ -25,7 +25,7 @@ burger.addEventListener('click',(e)=>{
 
 
 
-axios.get('https://still-spire-37210.herokuapp.com/positions.json?page=1')
+axios.get('https://jobsearchserver.herokuapp.com/positions.json?page=1')
   .then(function (response) {
     // handle success
     // console.log(response)
@@ -55,7 +55,7 @@ axios.get('https://still-spire-37210.herokuapp.com/positions.json?page=1')
      nextbutton.addEventListener('click',nextpage)
      function nextpage(){
        page+=1
-       axios.get(`https://still-spire-37210.herokuapp.com/positions.json?page=${page}`)
+       axios.get(`https://jobsearchserver.herokuapp.com/positions.json?page=${page}`)
        .then(response => { 
          // console.log(response)
          return response.data
@@ -95,7 +95,7 @@ if(checkValue){
 
 jobpanel.innerHTML=''
 
-axios.get(`https://still-spire-37210.herokuapp.com/positions.json?description=${desValue}&location=${locationValue}&full_time=${checkValue}&page=1`)
+axios.get(`https://jobsearchserver.herokuapp.com/positions.json?description=${desValue}&location=${locationValue}&full_time=${checkValue}&page=1`)
 .then(function (response) {
   // handle success
   return response.data
@@ -125,7 +125,7 @@ axios.get(`https://still-spire-37210.herokuapp.com/positions.json?description=${
       
       nextbutton.addEventListener('click',()=>{
        searchpage+=1
-       axios.get(`https://still-spire-37210.herokuapp.com/positions.json?description=${desValue}&location=${locationValue}&full_time=${checkValue}&page=${searchpage}`)
+       axios.get(`https://jobsearchserver.herokuapp.com/positions.json?description=${desValue}&location=${locationValue}&full_time=${checkValue}&page=${searchpage}`)
         .then(response => { 
           console.log(response)
           return response.data
